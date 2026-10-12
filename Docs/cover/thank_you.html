@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thank You</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #060914; --text: #eef1fa; --muted: #9aa4bd; --accent: #8b7dff; --accent-2: #22d3ee;
+    --pass: #34d399; --fail: #fb7185; --violet: #c084fc; --amber: #fbbf24; --border: rgba(255,255,255,.1); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); color: var(--text);
+    font-family: "Inter", system-ui, sans-serif; }
+  .stage { position: relative; width: 1920px; height: 1080px; overflow: hidden;
+    background: radial-gradient(1200px 700px at 50% 45%, #141c40, var(--bg)); }
+  .blob { position: absolute; border-radius: 50%; filter: blur(140px); }
+  .b1 { width: 760px; height: 760px; background: #4338ca; top: -300px; left: -200px; opacity: .65; }
+  .b2 { width: 720px; height: 720px; background: #0e7490; bottom: -300px; right: -180px; opacity: .6; }
+  .b3 { width: 560px; height: 560px; background: #86198f; bottom: -260px; left: 30%; opacity: .35; }
+  .grid { position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 64px 64px; mask-image: radial-gradient(ellipse at 50% 50%, #000 20%, transparent 70%); }
+  .net { position: absolute; inset: 0; opacity: .45; }
+  .rings { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+  .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .badge { display: flex; align-items: center; gap: 14px; padding: 12px 24px 12px 14px; border-radius: 999px;
+    font-size: 22px; font-weight: 800; letter-spacing: .14em; color: #fff;
+    background: linear-gradient(135deg, rgba(139,125,255,.28), rgba(34,211,238,.22)); border: 1.5px solid rgba(139,125,255,.6);
+    box-shadow: 0 0 60px -10px rgba(139,125,255,.7); }
+  .badge .ico { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  h1 { margin-top: 40px; font-size: 220px; line-height: .95; font-weight: 900; letter-spacing: -.055em;
+    background: linear-gradient(110deg, #fff 20%, var(--accent) 55%, var(--accent-2) 90%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 10px 60px rgba(139,125,255,.35)); }
+  .sub { margin-top: 30px; font-size: 40px; font-weight: 500; color: var(--muted); }
+  .sub b { color: var(--text); font-weight: 700; }
+  .divider { margin: 46px auto 0; width: 120px; height: 5px; border-radius: 99px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+  .recap { margin-top: 46px; display: flex; gap: 18px; }
+  .item { display: flex; align-items: center; gap: 14px; padding: 18px 26px; border-radius: 20px;
+    background: rgba(22,28,52,.62); border: 1px solid var(--border); backdrop-filter: blur(16px);
+    font-size: 24px; font-weight: 600; color: #d6dbea; box-shadow: 0 20px 50px -20px rgba(0,0,0,.7); }
+  .item .ic { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; color: var(--c);
+    background: color-mix(in srgb, var(--c) 16%, transparent); }
+  .q { margin-top: 56px; font-size: 30px; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+  .q span { color: var(--text); }
+  .brand { position: absolute; left: 50%; bottom: 60px; transform: translateX(-50%); display: flex; align-items: center; gap: 14px;
+    font-size: 26px; font-weight: 800; white-space: nowrap; }
+  .brand .mark { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 10px 30px -8px var(--accent); }
+  .brand small { font-size: 21px; font-weight: 500; color: var(--muted); }
+  .spark { position: absolute; border-radius: 50%; background: #fff; box-shadow: 0 0 14px 3px var(--c); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <div class="grid"></div>
+  <svg class="net" viewBox="0 0 1920 1080" id="net"></svg>
+
+  <svg class="rings" width="1300" height="1300" viewBox="0 0 1300 1300" aria-hidden="true">
+    <defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#8b7dff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+    <circle cx="650" cy="650" r="470" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="2"/>
+    <circle cx="650" cy="650" r="470" fill="none" stroke="url(#rg)" stroke-width="3" stroke-linecap="round"
+      stroke-dasharray="2953" stroke-dashoffset="2100" opacity=".55" transform="rotate(-140 650 650)"/>
+    <circle cx="650" cy="650" r="590" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="2" stroke-dasharray="4 14"/>
+    <circle cx="650" cy="650" r="590" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"
+      stroke-dasharray="3707" stroke-dashoffset="3330" opacity=".45" transform="rotate(-10 650 650)"/>
+  </svg>
+
+  <span class="spark" style="--c:#8b7dff;width:8px;height:8px;left:430px;top:250px"></span>
+  <span class="spark" style="--c:#22d3ee;width:6px;height:6px;left:1500px;top:220px"></span>
+  <span class="spark" style="--c:#c084fc;width:7px;height:7px;left:1560px;top:800px"></span>
+  <span class="spark" style="--c:#34d399;width:5px;height:5px;left:360px;top:790px"></span>
+  <span class="spark" style="--c:#fbbf24;width:5px;height:5px;left:960px;top:120px"></span>
+
+  <div class="center">
+    <div class="badge">
+      <span class="ico">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>
+        </svg>
+      </span>
+      MACHINE LEARNING PROJECT
+    </div>
+    <h1>Thank You</h1>
+    <p class="sub">for watching our <b>Student Grade Prediction</b> project</p>
+    <div class="divider"></div>
+    <div class="recap">
+      <div class="item" style="--c:var(--accent)">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>
+        Predict final grades
+      </div>
+      <div class="item" style="--c:var(--pass)">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        Flag pass / fail
+      </div>
+      <div class="item" style="--c:var(--violet)">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+        Support every student
+      </div>
+    </div>
+    <p class="q"><span>Questions?</span> We'd love to hear your feedback.</p>
+  </div>
+
+  <div class="brand">
+    <span class="mark">
+      <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+    </span>
+    GradeSight <small>· Gradient Boosting · Linear Regression · scikit-learn</small>
+  </div>
+</div>
+<script>
+  // Faint neural-network motifs in the corners.
+  const svg = document.getElementById("net");
+  function net(layers) {
+    const pts = layers.map(([x, y0, n, gap]) => Array.from({ length: n }, (_, i) => [x, y0 + (i - (n - 1) / 2) * gap]));
+    let out = "";
+    for (let l = 0; l < pts.length - 1; l++)
+      for (const a of pts[l]) for (const b of pts[l + 1])
+        out += `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="url(#lg)" stroke-width="1.2" opacity=".35"/>`;
+    for (const layer of pts) for (const [x, y] of layer)
+      out += `<circle cx="${x}" cy="${y}" r="6" fill="#0b1020" stroke="#8b7dff" stroke-width="2"/>`;
+    return out;
+  }
+  svg.innerHTML = `<defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#8b7dff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>` +
+    net([[70, 300, 3, 110], [200, 300, 4, 110], [330, 300, 2, 110]]) +
+    net([[1590, 780, 2, 110], [1720, 780, 4, 110], [1850, 780, 3, 110]]);
+</script>
+</body>
+</html>
